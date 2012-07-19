@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "Parse/Parse.h"
 
 @implementation AppDelegate
 
@@ -29,6 +30,11 @@
     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+   // [[StackMob stackmob]startSession];
+  
+    
+
     return YES;
 }
 
@@ -68,7 +74,10 @@
      Called when the application is about to terminate.
      Save data if appropriate.
      See also applicationDidEnterBackground:.
-     */
+
+    */
+    
+   // [[StackMob stackmob]endSession];
 }
 
 @end
