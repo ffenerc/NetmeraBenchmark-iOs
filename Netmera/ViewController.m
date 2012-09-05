@@ -2,8 +2,8 @@
 //  ViewController.m
 //  Netmera
 //
-//  Created by metin ogtem on 17.07.2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Serhat SARI on 9/3/12.
+//  Copyright (c) 2012 Serhat SARI. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -199,11 +199,7 @@
     
     [Parse setApplicationId:@"bP6qfqMGd1C2AgAVITHMzxtYkaqlb7dnJYRIlNe4"
                   clientKey:@"vAP8sVehg56B5qenVrzqJbhxDYlDILgbR729yKBT"];
-   
-    NetmeraClient *netmeraClient = [NetmeraClient sharedInstance];
-    netmeraClient.API_KEY =@"WVhCd1ZYSnNQV2gwZEhBbE0wRWxNa1lsTWtZME5EYzNOamt5TkM1dVpYUnRaWEpoTG1OdmJTVXpRVGd3SlRKR2JXOWlhVzFsY21FbE1rWm5ZV1JuWlhRbE1rWm9iMjFsTG5odGJDWnViVk5wZEdWVmNtdzlhSFIwY0NVelFTVXlSaVV5UmpRME56YzJPVEkwTG01bGRHMWxjbUV1WTI5dEpUTkJPREFtYlc5a2RXeGxTV1E5TkRreU1pWmhjSEJKWkQwME5EYzNOamt5TkNadWJWUmxiWEJzWVhSbFBXMXZZbWwwWlcxd2JHRjBaU1p2ZDI1bGNrbGtQV2RsYm1NdGJYTjBZV1poSm1SdmJXRnBiajF1WlhSdFpYSmhMbU52YlNadWJWTnBkR1U5TkRRM056WTVNalFtYjNkdVpYSlNiMnhsVkhsd1pUMHhKblpwWlhkbGNsSnZiR1ZVZVhCbFBURW1kbWxsZDJWeVNXUTlaMlZ1WXkxdGMzUmhabUVt";
-    
-    
+       
 
 }
 
@@ -288,9 +284,6 @@
     
 }
 
-
-
-
 -(Result*)parseCreate{
     
     Result *result = [[[Result alloc]init] autorelease];
@@ -353,8 +346,6 @@
     result.allResults = allTotalResults;
 
     return result;
-    
-    
     
 }
 
@@ -783,7 +774,7 @@
          
       
         [self publishProgress:progressBarStatus];
-        NetmeraService *servis=[[[NetmeraService alloc]initWithName:SEARCH_SERVICE_NAME] autorelease];
+        NetmeraService *servis = [[[NetmeraService alloc]initWithName:SEARCH_SERVICE_NAME] autorelease];
         [servis whereGreatherThanWithKey:@"age" andValue:[NSNumber numberWithInt:34]];
         [servis setMax:10];
                 

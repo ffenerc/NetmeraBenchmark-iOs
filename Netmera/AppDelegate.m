@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  Netmera
 //
-//  Created by metin ogtem on 17.07.2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Serhat SARI on 9/3/12.
+//  Copyright (c) 2012 Serhat SARI. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -31,10 +31,13 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-   // [[StackMob stackmob]startSession];
-  
+    
+    [NetmeraClient initWithApiKey:@"WVhCd1ZYSnNQV2gwZEhBbE0wRWxNa1lsTWtZME5EYzNOamt5TkM1dVpYUnRaWEpoTG1OdmJTVXpRVGd3SlRKR2JXOWlhVzFsY21FbE1rWm5ZV1JuWlhRbE1rWm9iMjFsTG5odGJDWnViVk5wZEdWVmNtdzlhSFIwY0NVelFTVXlSaVV5UmpRME56YzJPVEkwTG01bGRHMWxjbUV1WTI5dEpUTkJPREFtYlc5a2RXeGxTV1E5TkRreU1pWmhjSEJKWkQwME5EYzNOamt5TkNadWJWUmxiWEJzWVhSbFBXMXZZbWwwWlcxd2JHRjBaU1p2ZDI1bGNrbGtQV2RsYm1NdGJYTjBZV1poSm1SdmJXRnBiajF1WlhSdFpYSmhMbU52YlNadWJWTnBkR1U5TkRRM056WTVNalFtYjNkdVpYSlNiMnhsVkhsd1pUMHhKblpwWlhkbGNsSnZiR1ZVZVhCbFBURW1kbWxsZDJWeVNXUTlaMlZ1WXkxdGMzUmhabUVt"];// benimki
     
 
+
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+    
     return YES;
 }
 
@@ -79,5 +82,31 @@
     
    // [[StackMob stackmob]endSession];
 }
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    NSString *token = [NSString stringWithFormat:@"%@",deviceToken];
+    NSLog(@"Device Token =  %@" ,token);
+    //[NetmeraPushService registerInBackgroundWithToken:token];
+    
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    
+    // Do something
+    NSString *str = [NSString stringWithFormat: @"Error: %@", err];
+    NSLog(@"%@" ,str);
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    // Do something
+    for (id key in userInfo) {
+        NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
+    }
+    
+}
+
 
 @end

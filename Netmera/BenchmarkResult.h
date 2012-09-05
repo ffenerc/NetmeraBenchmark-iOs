@@ -2,8 +2,8 @@
 //  BenchmarkResult.h
 //  Netmera
 //
-//  Created by metin ogtem on 19.07.2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Serhat SARI on 9/3/12.
+//  Copyright (c) 2012 Serhat SARI. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

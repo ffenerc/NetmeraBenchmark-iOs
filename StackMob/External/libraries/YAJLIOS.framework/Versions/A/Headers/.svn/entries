@@ -1,0 +1,28 @@
+10
+
+dir
+0
+https://inomera.jira.com/svn/MOB/trunk/NetmeraIOSBenchmark/StackMob/External/libraries/YAJLIOS.framework/Versions/A/Headers
+https://inomera.jira.com/svn
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+54040bf1-342a-44a1-866c-b912241e9454
+
