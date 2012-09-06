@@ -181,9 +181,8 @@
                     [benchmarkResult setResultDictionary:dictionary];
                     [self presentModalViewController:benchmarkResult animated:YES];
                     [benchmarkResult release];
-                    [dictionary release];
                 }
-   
+                [dictionary release];
             }
            
         });
@@ -824,14 +823,14 @@
         NetmeraMedia *media = [[NetmeraMedia alloc] initWithData:UIImagePNGRepresentation(image)];
         NetmeraContent *content=[[NetmeraContent alloc]initWithObjectName:CREATE_MEDIA_OBJECT_NAME];
         [content add:@"netmeraLogo" object:media];
-        
+        [media release];
         NSError *error = nil;
         
         double startTime = CFAbsoluteTimeGetCurrent();
         [content create:&error];
         
         double endTime = CFAbsoluteTimeGetCurrent();
-        
+        [content release];
         if (error) {
             return nil;
         }
