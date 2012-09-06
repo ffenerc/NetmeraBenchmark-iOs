@@ -61,7 +61,6 @@
 		94757D6615B6A313000C6936 /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 94757D4615B6A313000C6936 /* NSData+JSON.m */; };
 		F760738A15E773B900FAFBBE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F760738915E773B900FAFBBE /* libsqlite3.dylib */; };
 		F760738C15E7741B00FAFBBE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F760738B15E7741B00FAFBBE /* libz.dylib */; };
-		F76DB6E215F754B0007DFFEC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F76DB6E115F754B0007DFFEC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,7 +161,6 @@
 		94757D4615B6A313000C6936 /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JSON.m"; sourceTree = "<group>"; };
 		F760738915E773B900FAFBBE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F760738B15E7741B00FAFBBE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		F76DB6E115F754B0007DFFEC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,7 +252,6 @@
 		9464798815B580C100EA2674 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F76DB6E115F754B0007DFFEC /* README.md */,
 				9464798915B580C100EA2674 /* Netmera IOS Benchmark-Info.plist */,
 				9464798A15B580C100EA2674 /* InfoPlist.strings */,
 				9464798D15B580C100EA2674 /* main.m */,
@@ -468,7 +465,6 @@
 				9464798C15B580C100EA2674 /* InfoPlist.strings in Resources */,
 				9464799815B580C100EA2674 /* ViewController.xib in Resources */,
 				947526AF15B7F48B004112F4 /* BenchmarkResult.xib in Resources */,
-				F76DB6E215F754B0007DFFEC /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
