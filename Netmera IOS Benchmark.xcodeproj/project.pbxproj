@@ -59,7 +59,7 @@
 		94757D6415B6A313000C6936 /* StackMobSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 94757D4015B6A313000C6936 /* StackMobSession.m */; };
 		94757D6515B6A313000C6936 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 94757D4415B6A313000C6936 /* NSData+Base64.m */; };
 		94757D6615B6A313000C6936 /* NSData+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 94757D4615B6A313000C6936 /* NSData+JSON.m */; };
-		F729DFF215F895BB00001F93 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F729DFF115F895BB00001F93 /* README.md */; };
+		F729DFF415F8960200001F93 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F729DFF315F8960200001F93 /* README.md */; };
 		F760738A15E773B900FAFBBE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F760738915E773B900FAFBBE /* libsqlite3.dylib */; };
 		F760738C15E7741B00FAFBBE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F760738B15E7741B00FAFBBE /* libz.dylib */; };
 /* End PBXBuildFile section */
@@ -160,7 +160,7 @@
 		94757D4415B6A313000C6936 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		94757D4515B6A313000C6936 /* NSData+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+JSON.h"; sourceTree = "<group>"; };
 		94757D4615B6A313000C6936 /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JSON.m"; sourceTree = "<group>"; };
-		F729DFF115F895BB00001F93 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		F729DFF315F8960200001F93 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F760738915E773B900FAFBBE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F760738B15E7741B00FAFBBE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -194,6 +194,7 @@
 		9464797215B580C000EA2674 = {
 			isa = PBXGroup;
 			children = (
+				F729DFF315F8960200001F93 /* README.md */,
 				94757CF915B6A313000C6936 /* StackMob */,
 				9464798715B580C100EA2674 /* Netmera */,
 				9464798015B580C100EA2674 /* Frameworks */,
@@ -254,7 +255,6 @@
 		9464798815B580C100EA2674 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F729DFF115F895BB00001F93 /* README.md */,
 				9464798915B580C100EA2674 /* Netmera IOS Benchmark-Info.plist */,
 				9464798A15B580C100EA2674 /* InfoPlist.strings */,
 				9464798D15B580C100EA2674 /* main.m */,
@@ -468,7 +468,7 @@
 				9464798C15B580C100EA2674 /* InfoPlist.strings in Resources */,
 				9464799815B580C100EA2674 /* ViewController.xib in Resources */,
 				947526AF15B7F48B004112F4 /* BenchmarkResult.xib in Resources */,
-				F729DFF215F895BB00001F93 /* README.md in Resources */,
+				F729DFF415F8960200001F93 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
