@@ -23,7 +23,7 @@ NSString * const PARSE_RESULTS = @"NetmeraResults";
 NSString * const STACKMOB_RESULTS = @"NetmeraResults";
 
 
-NSString * const NETMERA_GET_PATH = @"/mobimeracontents/_854217305";//Daha testobectios oluşturulmadı ... eskisi : /mobimeracontents/_398108177
+NSString * const NETMERA_GET_PATH = @"/mobimeracontents/_1938082179";//Daha testobectios oluşturulmadı ... eskisi : /mobimeracontents/_398108177
 NSString * const PARSE_GET_ID = @"sJsVk0BCUB";
 NSString * const STACKMOB_GET_ID = @"testobjectios/493f271a7f06430793a93613707af6a2";
 
