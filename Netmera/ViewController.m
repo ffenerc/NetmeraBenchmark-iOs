@@ -858,6 +858,7 @@
 }
 -(Result*) stackmobMedia{
     Result *result = [[[Result alloc]init] autorelease];
+    //stackmob media requests here
     return result;
 }
 -(Result*) parseMedia{

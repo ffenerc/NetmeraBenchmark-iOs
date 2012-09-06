@@ -1,3 +1,18 @@
+/**
+* Copyright 2012 Inomera Research
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 #import <Foundation/Foundation.h>
 #import "JSONKit.h"
@@ -314,7 +329,7 @@
  Logs a user into the registered application. Email and password fields of user is used for this operation.
  
  @param target The object to call selector on.
- @param selector The selector to call. It should have the following signature: (void) callBackLoginWithError:(NSError *)error. error will be nil on success and set if there was an error.
+ @param selector The selector to call. It should have the following signature: (void) callBackLoginWithError:(NSError *)error withNetmeraUser:(NetmeraUser *)user. error will be nil on success and set if there was an error.
  
  @param email of the user
  @param password of the user
