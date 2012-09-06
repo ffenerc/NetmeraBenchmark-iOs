@@ -11,6 +11,7 @@
 @interface TestConstants : NSObject
 
 extern NSString * const CREATE_OBJECT_NAME;
+extern NSString * const CREATE_MEDIA_OBJECT_NAME;
 extern NSString * const SEARCH_SERVICE_NAME;
 extern NSString * const GET_SERVICE_NAME;
 extern NSString * const STACKMOB_OBJECT;

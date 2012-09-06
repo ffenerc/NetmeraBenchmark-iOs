@@ -10,11 +10,14 @@
 
 @implementation BenchmarkConstants
 
+NSString * const IMAGE_NAME = @"netmeralogo.png";
+
 NSString * const NUMBER_OF_CALLS = @"numberOfCalls";
 NSString * const FUNCTION_TYPE = @"functionType";
 NSString * const SEARCH = @"Search";
 NSString * const GETT = @"Get";
 NSString * const CREATE = @"Create";
+NSString * const MEDIA = @"Media";
 
 NSString * const NETMERA = @"Netmera";
 NSString * const NETMERA_MIN = @"netmeraMin";

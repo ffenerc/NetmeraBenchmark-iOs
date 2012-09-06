@@ -69,7 +69,6 @@
 -(void)doBenchmark{
 
     NSLog(@"do Benchmark");
-   
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
        
@@ -84,7 +83,7 @@
                         
                         Result *result = [self netmeraSearch];
                        [dictionary setValue:result forKey:NETMERA];
-                        
+                    
                     }
 
                                        
@@ -94,7 +93,6 @@
                         [dictionary setValue:result forKey:PARSE];
 
                     }
-                    
                    
                     
                     if (isStackmob) {//STACKMOB SEARCH
@@ -132,7 +130,6 @@
                        Result *result = [self netmeraCreate];
                         [dictionary setValue:result forKey:NETMERA];
                         
-                        
                     }
                     
                     if (isParse) {//PARSE CREATE
@@ -150,8 +147,29 @@
                         
                     }
                     
+                }else if (functionType == MEDIA){
                     
+                    if (isNetmera) {//NETMERA CREATE
+                        
+                        Result *result = [self netmeraMedia];
+                        [dictionary setValue:result forKey:NETMERA];
+                        
+                    }
                     
+                    if (isParse) {//PARSE CREATE
+                        
+                        //Result *result=[[Result alloc]init];
+                        Result *result = [self parseMedia];
+                        [dictionary setValue:result forKey:PARSE];
+                        
+                    }
+                    
+                    if (isStackmob) {//STACKMOB CREATE
+                        
+                        Result *result = [self stackmobMedia];
+                        [dictionary setValue:result forKey:STACKMOB];
+                        
+                    }
                     
                 }
                 
@@ -165,17 +183,11 @@
                     [benchmarkResult release];
                     [dictionary release];
                 }
-                
-                
-                
+   
             }
-            
-            
            
         });
     });
-    
-
     
 }
 
@@ -184,7 +196,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
 
     isParse = NO;
     isNetmera = NO;
@@ -194,7 +205,7 @@
     progressBarStatus = 0;
     
     platform = [[NSString alloc]init];
-    functionTypeArray = [[NSArray alloc]initWithObjects:@"Search",@"Get",@"Create", nil];
+    functionTypeArray = [[NSArray alloc]initWithObjects:@"Search",@"Get",@"Create",@"Media", nil];
     functionType = [[NSString alloc]initWithString:[functionTypeArray objectAtIndex:0]];
     
     [Parse setApplicationId:@"bP6qfqMGd1C2AgAVITHMzxtYkaqlb7dnJYRIlNe4"
@@ -305,7 +316,7 @@
         [self publishProgress:progressBarStatus];
         
         
-        PFObject *parseObject = [PFObject objectWithClassName:@"testobjectios"];
+        PFObject *parseObject = [PFObject objectWithClassName:CREATE_OBJECT_NAME];
         [parseObject setObject:[NSNumber numberWithInt:222] forKey:@"userId"];
         [parseObject setObject:@"Metin" forKey:@"name"];
         [parseObject setObject:[NSNumber numberWithInt:33] forKey:@"age"];
@@ -407,15 +418,8 @@
     result.max = max;
     result.min = min;
     result.allResults = allTotalResults;
-
     
     return result;
-    
-
-
-
-
-
 
 }
 
@@ -483,12 +487,9 @@
     result.min = min;
     result.allResults = allTotalResults;
     
-    
     return result;
     
-    
 }
-
 
 
 -(Result*)netmeraGET{
@@ -547,13 +548,7 @@
     result.allResults = allTotalResults;
 
     return result;
-    
-    
-    
-    
-    
-    
-    
+
 }
 
 
@@ -616,8 +611,6 @@
     result.allResults = allTotalResults;
         
     return result;
-    
-
 
 }
 
@@ -687,10 +680,6 @@
     result.allResults = allTotalResults;
         
     return result;
-    
-
-
-
 }
 
 -(Result*)parseSearch{
@@ -750,8 +739,6 @@
         
     return result;
 
-
-
 }
 
 
@@ -763,44 +750,43 @@
         platform = NETMERA ;
     
     for (int i=0; i < callNumber; i++) {
-       
         if (startProgres == NO) {
             return nil;
         }
-    
+        
         progressBarStatus =(float)i/callNumber;
         
         [progresView setProgress:progressBarStatus animated:YES];
-         
-      
+        
+        
         [self publishProgress:progressBarStatus];
         NetmeraService *servis = [[[NetmeraService alloc]initWithName:SEARCH_SERVICE_NAME] autorelease];
         [servis whereGreatherThanWithKey:@"age" andValue:[NSNumber numberWithInt:34]];
         [servis setMax:10];
-                
-    NSError *error = nil;
-    
-   double startTime = CFAbsoluteTimeGetCurrent();
-    
-    [servis search:&error];
         
-   double endTime = CFAbsoluteTimeGetCurrent();
-    
+        NSError *error = nil;
+        
+        double startTime = CFAbsoluteTimeGetCurrent();
+        
+        [servis search:&error];
+        
+        double endTime = CFAbsoluteTimeGetCurrent();
+        
         if (error) {
             return nil;
         }
         
-    difference = endTime - startTime;
-    [allTotalResults addObject:[NSNumber numberWithDouble:difference]];
-    totalDifference += difference;
-    
-    if (difference < min) {
-        min = difference;
-    }
-    if (difference > max) {
-        max = difference;
-    }
-    NSLog(@"%i .Netmera-Search : %f",i,difference);
+        difference = endTime - startTime;
+        [allTotalResults addObject:[NSNumber numberWithDouble:difference]];
+        totalDifference += difference;
+        
+        if (difference < min) {
+            min = difference;
+        }
+        if (difference > max) {
+            max = difference;
+        }
+        NSLog(@"%i .Netmera-Search : %f",i,difference);
     
     }
    [self publishProgress:1];  
@@ -813,7 +799,124 @@
     
     return result;
 
+}
+
+-(Result*) netmeraMedia{
+    Result *result = [[[Result alloc]init] autorelease];
+    double totalDifference = 0, max = 0, min = 9999, difference = 0;
+    NSMutableArray *allTotalResults=[[[NSMutableArray alloc] init] autorelease];
+    platform = NETMERA ;
+    
+    
+    for (int i=0; i < callNumber; i++) {
         
+        if (startProgres == NO) {
+            return nil;
+        }
+        
+        progressBarStatus = (float)i / callNumber;
+        
+        [progresView setProgress:progressBarStatus animated:YES];
+        
+        [self publishProgress:progressBarStatus];
+        
+        UIImage *image = [UIImage imageNamed:IMAGE_NAME];
+        NetmeraMedia *media = [[NetmeraMedia alloc] initWithData:UIImagePNGRepresentation(image)];
+        NetmeraContent *content=[[NetmeraContent alloc]initWithObjectName:CREATE_MEDIA_OBJECT_NAME];
+        [content add:@"netmeraLogo" object:media];
+        
+        NSError *error = nil;
+        
+        double startTime = CFAbsoluteTimeGetCurrent();
+        [content create:&error];
+        
+        double endTime = CFAbsoluteTimeGetCurrent();
+        
+        if (error) {
+            return nil;
+        }
+        
+        difference = endTime - startTime;
+        [allTotalResults addObject:[NSNumber numberWithDouble:difference]];
+        totalDifference += difference;
+        
+        if (difference < min) {
+            min = difference;
+        }
+        if (difference > max) {
+            max = difference;
+        }
+        NSLog(@"%i .Netmera-CREATE : %f",i,difference);
+    }
+    [self publishProgress:1];
+    
+    NSLog(@"Genereal Netmera CREATE Result : %f",totalDifference);
+    result.average = totalDifference / callNumber;
+    result.max = max;
+    result.min = min;
+    result.allResults = allTotalResults;
+    return result;
+}
+-(Result*) stackmobMedia{
+    Result *result = [[[Result alloc]init] autorelease];
+    return result;
+}
+-(Result*) parseMedia{
+    Result *result = [[[Result alloc]init] autorelease];
+    double totalDifference = 0, max = 0, min = 9999, difference = 0;
+    NSMutableArray *allTotalResults=[[[NSMutableArray alloc] init] autorelease];
+    platform = PARSE ;
+    
+    for (int i=0; i < callNumber; i++) {
+        
+        if (startProgres == NO) {
+            return nil;
+        }
+        
+        progressBarStatus = (float)i / callNumber;
+        
+        [progresView setProgress:progressBarStatus animated:YES];
+        
+        [self publishProgress:progressBarStatus];
+
+        UIImage *image = [UIImage imageNamed:IMAGE_NAME];
+        NSData *imageData = UIImagePNGRepresentation(image);
+        PFFile *imageFile = [PFFile fileWithName:IMAGE_NAME data:imageData];
+
+        NSError *error = nil;
+        
+        double startTime = CFAbsoluteTimeGetCurrent();
+        [imageFile save];
+        PFObject *userPhoto = [PFObject objectWithClassName:CREATE_OBJECT_NAME];
+        [userPhoto setObject:imageFile forKey:@"imageFile"];
+        [userPhoto save];
+        
+        double endTime = CFAbsoluteTimeGetCurrent();
+        
+        if (error) {
+            return nil;
+        }
+        
+        difference = endTime - startTime;
+        [allTotalResults addObject:[NSNumber numberWithDouble:difference]];
+        totalDifference += difference;
+        
+        if (difference < min) {
+            min = difference;
+        }
+        if (difference > max) {
+            max = difference;
+        }
+        NSLog(@"%i .Parse-CREATE : %f",i,difference);
+    }
+    [self publishProgress:1];
+    
+    NSLog(@"Genereal Parse CREATE Result : %f",totalDifference);
+    result.average = totalDifference / callNumber;
+    result.max = max;
+    result.min = min;
+    result.allResults = allTotalResults;
+    return result;
 }
 
 -(void)publishProgress:(float)progres{
@@ -833,9 +936,7 @@
         [[NSRunLoop currentRunLoop] runUntilDate:futureDate];
   
     
-
     [progresView setProgress:progres animated:YES];
-
 
 }
 

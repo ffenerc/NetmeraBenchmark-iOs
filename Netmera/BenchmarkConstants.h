@@ -10,11 +10,14 @@
 
 @interface BenchmarkConstants : NSObject
 
+extern NSString * const IMAGE_NAME;
+
 extern NSString * const NUMBER_OF_CALLS;
 extern NSString * const FUNCTION_TYPE;
 extern NSString * const SEARCH;
 extern NSString * const GETT;
 extern NSString * const CREATE;
+extern NSString * const MEDIA;
 
 extern NSString * const NETMERA;
 extern NSString * const NETMERA_MIN;

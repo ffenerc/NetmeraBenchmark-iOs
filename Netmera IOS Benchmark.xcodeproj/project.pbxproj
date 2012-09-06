@@ -62,6 +62,7 @@
 		F729DFF415F8960200001F93 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F729DFF315F8960200001F93 /* README.md */; };
 		F760738A15E773B900FAFBBE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F760738915E773B900FAFBBE /* libsqlite3.dylib */; };
 		F760738C15E7741B00FAFBBE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F760738B15E7741B00FAFBBE /* libz.dylib */; };
+		F789E35B15F8B75900A744B0 /* netmeralogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F789E35A15F8B75900A744B0 /* netmeralogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +164,7 @@
 		F729DFF315F8960200001F93 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F760738915E773B900FAFBBE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F760738B15E7741B00FAFBBE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F789E35A15F8B75900A744B0 /* netmeralogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = netmeralogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		9464797215B580C000EA2674 = {
 			isa = PBXGroup;
 			children = (
+				F789E35A15F8B75900A744B0 /* netmeralogo.png */,
 				F729DFF315F8960200001F93 /* README.md */,
 				94757CF915B6A313000C6936 /* StackMob */,
 				9464798715B580C100EA2674 /* Netmera */,
@@ -469,6 +472,7 @@
 				9464799815B580C100EA2674 /* ViewController.xib in Resources */,
 				947526AF15B7F48B004112F4 /* BenchmarkResult.xib in Resources */,
 				F729DFF415F8960200001F93 /* README.md in Resources */,
+				F789E35B15F8B75900A744B0 /* netmeralogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

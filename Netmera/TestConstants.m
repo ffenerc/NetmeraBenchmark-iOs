@@ -11,6 +11,7 @@
 @implementation TestConstants
 
 NSString * const CREATE_OBJECT_NAME = @"testobjectios";
+NSString * const CREATE_MEDIA_OBJECT_NAME = @"testmediaobjectios";
 NSString * const SEARCH_SERVICE_NAME = @"testobjectios";
 NSString * const GET_SERVICE_NAME = @"testobjectios";
 NSString * const STACKMOB_OBJECT = @"testobjectios";
